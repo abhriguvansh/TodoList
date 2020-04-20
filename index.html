@@ -8,9 +8,27 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./scss/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+    />
     <title>Todo List</title>
   </head>
   <body>
+    <header>
+      <h1>Todo List</h1>
+    </header>
+    <form>
+      <input type="text" class="todo-input" />
+      <button class="todo-button" type="submit">
+        <i class="fas fa-plus"></i>
+      </button>
+    </form>
+    <div class="todo-container">
+      <ul class="todo-list"></ul>
+    </div>
     <script src="./javascript/app.js"></script>
   </body>
 </html>
