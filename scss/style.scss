@@ -61,3 +61,49 @@ form {
   min-width: 30%;
   list-style: none;
 }
+
+.todo {
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  li {
+    flex: 1;
+  }
+  transition: all 0.5s ease;
+}
+
+.trash-btn,
+.complete-btn {
+  color: #b465da;
+  background-color: white;
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.complete-btn:hover {
+  color: green;
+}
+
+.trash-btn:hover {
+  color: red;
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.fa-times,
+.fa-check {
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
