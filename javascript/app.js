@@ -1,9 +1,11 @@
 const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
+const filterOption = document.querySelector('.filter-todo');
 const todoList = document.querySelector('.todo-list');
 
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteAndCheck);
+filterOption.addEventListener('click', filterTodo);
 
 function addTodo(event) {
   event.preventDefault(); //prevent form from submitting
@@ -29,10 +31,40 @@ function deleteAndCheck(event) {
   const item = event.target;
   if (item.classList[0] === 'trash-btn') {
     const todo = item.parentElement;
-    todo.remove();
+    todo.classList.add('fall');
+    todo.addEventListener('transitionend', function () {
+      todo.remove();
+    });
   }
   if (item.classList[0] === 'complete-btn') {
     const todo = item.parentElement;
     todo.classList.toggle('completed');
   }
 }
+
+function filterTodo(event) {
+  const todos = todoList.childNodes;
+  todos.forEach(function (todo) {
+    switch (event.target.value) {
+      case 'all':
+        todo.style.display = 'flex';
+        break;
+      case 'completed':
+        if (todo.classList.contains('completed')) {
+          todo.style.display = 'flex';
+        } else {
+          todo.style.display = 'none';
+        }
+        break;
+      case 'uncompleted':
+        if (!todo.classList.contains('completed')) {
+          todo.style.display = 'flex';
+        } else {
+          todo.style.display = 'none';
+        }
+        break;
+    }
+  });
+}
+
+function 

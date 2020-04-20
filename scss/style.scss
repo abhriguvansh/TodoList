@@ -107,3 +107,40 @@ form {
   text-decoration: line-through;
   opacity: 0.5;
 }
+
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  color: #b465da;
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: '\25BC';
+    position: absolute;
+    background: #b465da;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  &:hover::after {
+    background-color: white;
+    color: #b465da;
+  }
+}
