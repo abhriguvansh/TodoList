@@ -52,6 +52,18 @@ form button:hover {
   background-color: #b465da;
 }
 
+form .input {
+  position: relative;
+}
+
+form .input button {
+  position: absolute;
+}
+
+form .select {
+  margin-left: 4rem;
+}
+
 .todo-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -164,5 +176,17 @@ select {
 .select:hover::after {
   background-color: white;
   color: #b465da;
+}
+
+@media screen and (max-width: 700px) {
+  form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 /*# sourceMappingURL=style.css.map */

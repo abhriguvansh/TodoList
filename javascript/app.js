@@ -66,5 +66,3 @@ function filterTodo(event) {
     }
   });
 }
-
-function 
